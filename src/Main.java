@@ -19,7 +19,8 @@ public class Main {
             System.out.println(" Ciao segui il menu' per entrare nelle diverse sezioni...\n" +
                     "1 Per inserire un ospedale\n" +
                     "2 Per rimuovere un ospedale\n" +
-                    "3 per visualizzare l' elenco\n" +
+                    "3 Per visualizzare l' elenco\n" +
+                    "4 Per scegliere un'ospedale\n" +
                     "0  per  uscire");
             try {
                 scelta = Integer.parseInt(tastiera.nextLine());
@@ -53,7 +54,11 @@ public class Main {
                             System.out.println(i.getNome());
                         }
                         break;
-                    // altri casi possibili
+                    //da pensare e sistemare
+                        /*case 4:
+                            System.out.println("Scegli un ospedale :..");
+                            scelta= Integer.parseInt(tastiera.nextLine());
+                          */
                     case 0:
                         System.exit(0);
                         break;
