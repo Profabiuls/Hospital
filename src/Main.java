@@ -54,11 +54,20 @@ public class Main {
                             System.out.println(i.getNome());
                         }
                         break;
-                    //da pensare e sistemare
-                        /*case 4:
-                            System.out.println("Scegli un ospedale :..");
-                            scelta= Integer.parseInt(tastiera.nextLine());
-                          */
+
+                    case 4:
+                        String sceltaOsp = "";
+                        do {
+                            System.out.println("Scrivi EXIT Per tornare al menu' precedente oppure");
+                            System.out.println("Scegli un ospedale ed inserisci il nome per entrare nel menu':..");
+                            sceltaOsp = tastiera.nextLine();
+                            for (Ospedale i : elencoOspedali) {
+                                if (i.nome.equals(sceltaOsp)) {
+                                    System.out.println(i.getNome());
+                                }
+                            }
+                        } while (!sceltaOsp.equals("EXIT"));
+
                     case 0:
                         System.exit(0);
                         break;
