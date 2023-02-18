@@ -9,7 +9,7 @@ public class Main {
         Scanner tastiera = new Scanner(System.in);
         LinkedList<Ospedale> elencoOspedali = new LinkedList<Ospedale>();
         System.out.println(
-                " _____  _______  _____  _____ _______ _______      \n" +
+                        " _____  _______  _____  _____ _______ _______      \n" +
                         "|     | |______ |_____]   |      |    |_____| |    \n" +
                         "|_____| ______| |       __|__    |    |     | |_____"
         );
