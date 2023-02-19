@@ -8,20 +8,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner tastiera = new Scanner(System.in);
         LinkedList<Ospedale> elencoOspedali = new LinkedList<Ospedale>();
-        System.out.println(
-                        " _____  _______  _____  _____ _______ _______      \n" +
-                        "|     | |______ |_____]   |      |    |_____| |    \n" +
-                        "|_____| ______| |       __|__    |    |     | |_____"
-        );
+        System.out.println("""
+                          _____  _______  _____  _____ _______ _______  
+                         |     | |______ |_____]   |      |    |_____| |   
+                         |_____| ______| |       __|__    |    |     | |_____
+                        """
+                      );
         int scelta;
 
         while (true) {
-            System.out.println(" Ciao segui il menu' per entrare nelle diverse sezioni...\n" +
-                    "1 Per inserire un ospedale\n" +
-                    "2 Per rimuovere un ospedale\n" +
-                    "3 Per visualizzare l' elenco\n" +
-                    "4 Per scegliere un'ospedale\n" +
-                    "0  per  uscire");
+            System.out.println(""" 
+                    Ciao segui il menu' per entrare nelle diverse sezioni... 
+                    1 Per inserire un ospedale
+                    2 Per rimuovere un ospedale
+                    3 Per visualizzare l' elenco
+                    4 Per scegliere un'ospedale
+                    0  per  uscire
+                    """);
             try {
                 scelta = Integer.parseInt(tastiera.nextLine());
 
@@ -36,9 +39,11 @@ public class Main {
                         break;
                     case 2:
                         do {
-                            System.out.println("1 Per rimuovere l'ultimo\n" +
-                                    "2 Per rimuovere il primo\n" +
-                                    "0 Per tornare al menu' precedente");
+                            System.out.println("""
+                                    1 Per rimuovere l'ultimo
+                                    2 Per rimuovere il primo
+                                    0 Per tornare al menu' precedente
+                                    """);
                             scelta = Integer.parseInt(tastiera.nextLine());
                             if (scelta == 1) {
                                 elencoOspedali.removeLast();
@@ -63,7 +68,7 @@ public class Main {
                             sceltaOsp = tastiera.nextLine();
                             for (Ospedale i : elencoOspedali) {
                                 if (i.nome.equals(sceltaOsp)) {
-                                    System.out.println(i.getNome());
+                                    i.menu();
                                 }
                             }
                         } while (!sceltaOsp.equals("EXIT"));

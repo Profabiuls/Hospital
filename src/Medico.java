@@ -1,6 +1,10 @@
-public class Medico extends  Persona{
+public class Medico extends Persona {
     String specializzazione;
     int pazientiInCura;
+
+    Medico(String cognome) {
+        super(cognome);
+    }
 
     public String getSpecializzazione() {
         return specializzazione;

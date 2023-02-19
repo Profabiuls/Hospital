@@ -2,6 +2,10 @@ public class Paziente extends Persona{
     String tipoMalattia;
     int id;
 
+    Paziente(String cognome) {
+        super(cognome);
+    }
+
     public String getTipoMalattia() {
         return tipoMalattia;
     }

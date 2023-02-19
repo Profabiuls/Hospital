@@ -3,6 +3,14 @@ public class Persona {
     String cognome;
     String codiceFiscale;
     String dataDiNascita;
+    String indirizzo;
+    char sesso;
+    int eta;
+
+
+    Persona(String cognome) {
+        this.cognome = cognome;
+    }
 
     public String getNome() {
         return nome;
@@ -60,7 +68,5 @@ public class Persona {
         this.indirizzo = indirizzo;
     }
 
-    char sesso;
-    int eta;
-    String indirizzo;
+
 }
