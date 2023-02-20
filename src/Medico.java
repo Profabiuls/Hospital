@@ -1,9 +1,16 @@
+import java.util.LinkedList;
+
 public class Medico extends Persona {
     String specializzazione;
     int pazientiInCura;
+    LinkedList<Medico> listaMedici = new LinkedList<>();
 
     Medico(String cognome) {
         super(cognome);
+    }
+
+    public LinkedList<Medico> getLista() {
+        return this.listaMedici;
     }
 
     public String getSpecializzazione() {

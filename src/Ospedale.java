@@ -7,10 +7,15 @@ public class Ospedale {
     String provincia;
     int numeroDipendenti;
     Scanner tastiera = new Scanner(System.in);
-    LinkedList<Medico> elencoMedici = new LinkedList<>();
+    LinkedList<Medico> elencoMedicicondivisi = new LinkedList<>();
 
     Ospedale(String nome) {
         this.nome = nome;
+    }
+
+    //prendo in condivisione i dati dei medici
+    Ospedale(Medico medico) {
+        this.elencoMedicicondivisi = medico.getLista();
     }
 
     public String getNome() {
@@ -47,9 +52,9 @@ public class Ospedale {
 
     public void menu() {
 
-        int scelta;
+        int scelta=100;
 
-        while (true) {
+        while (scelta!=0) {
             System.out.println(""" 
                     Ciao segui il menu' per entrare nelle diverse sezioni... 
                     1 Per inserire un medico
@@ -73,8 +78,8 @@ public class Ospedale {
                         System.out.println("Inserisci il nome del medico ");
                         testo = tastiera.nextLine();
                         medico.setNome(testo);
-                        elencoMedici.add(medico);
-                 //da fare inserimento dati medico ma dalla classe medico
+                        elencoMedicicondivisi.add(medico);
+                        //da fare inserimento dati medico ma dalla classe medico
                         break;
                     case 2:
 
@@ -85,6 +90,11 @@ public class Ospedale {
 
                     case 4:
 
+                        break;
+                    case 5:
+                        for (Medico i : elencoMedicicondivisi) {
+                            System.out.println(i.nome);
+                        }
                         break;
                     case 0:
 
