@@ -8,9 +8,6 @@ public class Persona {
     int eta;
 
 
-    Persona(String cognome) {
-        this.cognome = cognome;
-    }
 
     public String getNome() {
         return nome;

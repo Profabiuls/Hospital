@@ -7,15 +7,11 @@ public class Ospedale {
     String provincia;
     int numeroDipendenti;
     Scanner tastiera = new Scanner(System.in);
-    LinkedList<Medico> elencoMedicicondivisi = new LinkedList<>();
+    LinkedList<Medico> elencoMedici = new LinkedList<>();
+    LinkedList<Paziente> elencoPazienti = new LinkedList<>();
 
     Ospedale(String nome) {
         this.nome = nome;
-    }
-
-    //prendo in condivisione i dati dei medici
-    Ospedale(Medico medico) {
-        this.elencoMedicicondivisi = medico.getLista();
     }
 
     public String getNome() {
@@ -52,9 +48,9 @@ public class Ospedale {
 
     public void menu() {
 
-        int scelta=100;
+        int scelta = 100;
 
-        while (scelta!=0) {
+        while (scelta != 0) {
             System.out.println(""" 
                     Ciao segui il menu' per entrare nelle diverse sezioni... 
                     1 Per inserire un medico
@@ -71,18 +67,15 @@ public class Ospedale {
 
                 switch (scelta) {
                     case 1:
-                        String testo;
-                        System.out.println("Inserisci il cognome del medico ");
-                        testo = tastiera.nextLine();
-                        Medico medico = new Medico(testo);
-                        System.out.println("Inserisci il nome del medico ");
-                        testo = tastiera.nextLine();
-                        medico.setNome(testo);
-                        elencoMedicicondivisi.add(medico);
-                        //da fare inserimento dati medico ma dalla classe medico
+                        Medico medico = new Medico();
+                        medico.inserisciMedico();
+                        elencoMedici.add(medico);
+                        numeroDipendenti += 1;
                         break;
                     case 2:
-
+                        System.out.println("Inserisci il cognome del medico da eliminare..: ");
+                        String testo = tastiera.nextLine();
+                        elencoMedici.removeIf(i -> i.cognome.equals(testo));
                         break;
                     case 3:
 
@@ -92,8 +85,8 @@ public class Ospedale {
 
                         break;
                     case 5:
-                        for (Medico i : elencoMedicicondivisi) {
-                            System.out.println(i.nome);
+                        for (Medico i : elencoMedici) {
+                            System.out.println(i.nome + " " + i.cognome + " Numero pazienti "+ i.pazientiInCura);
                         }
                         break;
                     case 0:

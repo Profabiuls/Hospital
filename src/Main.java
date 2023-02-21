@@ -9,11 +9,11 @@ public class Main {
         Scanner tastiera = new Scanner(System.in);
         LinkedList<Ospedale> elencoOspedali = new LinkedList<Ospedale>();
         System.out.println("""
-                          _____  _______  _____  _____ _______ _______  
-                         |     | |______ |_____]   |      |    |_____| |   
-                         |_____| ______| |       __|__    |    |     | |_____
-                        """
-                      );
+                  _____  _______  _____  _____ _______ _______  
+                 |     | |______ |_____]   |      |    |_____| |   
+                 |_____| ______| |       __|__    |    |     | |_____
+                """
+        );
         int scelta;
 
         while (true) {
@@ -56,22 +56,22 @@ public class Main {
                     case 3:
                         System.out.println("Elenco ospedali creati: \n");
                         for (Ospedale i : elencoOspedali) {
-                            System.out.println(i.getNome());
+                            System.out.println(i.getNome() + " Numero dipendenti : " + i.numeroDipendenti);
                         }
                         break;
 
                     case 4:
                         String sceltaOsp = "";
-                        do {
-                            System.out.println("Scrivi EXIT Per tornare al menu' precedente oppure");
-                            System.out.println("Scegli un ospedale ed inserisci il nome per entrare nel menu':..");
-                            sceltaOsp = tastiera.nextLine();
-                            for (Ospedale i : elencoOspedali) {
-                                if (i.nome.equals(sceltaOsp)) {
-                                    i.menu();
-                                }
+                        System.out.println("Scegli un ospedale ed inserisci il nome per entrare nel menu':..");
+                        sceltaOsp = tastiera.nextLine();
+                        for (Ospedale i : elencoOspedali) {
+                            if (i.nome.equals(sceltaOsp)) {
+                                i.menu();
+                            } else {
+                                System.out.println("Il nome inserito non corrisponde a nessun ospedale riprova.. ");
                             }
-                        } while (!sceltaOsp.equals("EXIT"));
+                        }
+                        break;
 
                     case 0:
                         System.exit(0);

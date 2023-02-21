@@ -1,17 +1,9 @@
-import java.util.LinkedList;
+import java.util.Scanner;
 
 public class Medico extends Persona {
+    Scanner tastiera = new Scanner(System.in);
     String specializzazione;
     int pazientiInCura;
-    LinkedList<Medico> listaMedici = new LinkedList<>();
-
-    Medico(String cognome) {
-        super(cognome);
-    }
-
-    public LinkedList<Medico> getLista() {
-        return this.listaMedici;
-    }
 
     public String getSpecializzazione() {
         return specializzazione;
@@ -28,4 +20,27 @@ public class Medico extends Persona {
     public void setPazientiInCura(int pazientiInCura) {
         this.pazientiInCura = pazientiInCura;
     }
+
+    String setMedico;
+
+    public void inserisciMedico() {
+        Medico medico = new Medico();
+        System.out.println("Inserisci nome : ");
+        setMedico = tastiera.nextLine();
+        this.nome = setMedico;
+        System.out.println("Inserisci cognome : ");
+        setMedico = tastiera.nextLine();
+        this.cognome = setMedico;
+        System.out.println("Inserisci codice fiscale : ");
+        setMedico = tastiera.nextLine();
+        this.codiceFiscale = setMedico;
+        System.out.println("Inserisci data di nascita : ");
+        setMedico = tastiera.nextLine();
+        this.dataDiNascita = setMedico;
+        System.out.println("Inserisci specializzazione  : ");
+        setMedico = tastiera.nextLine();
+        this.specializzazione = setMedico;
+    }
+
+
 }
