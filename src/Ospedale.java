@@ -78,15 +78,24 @@ public class Ospedale {
                         elencoMedici.removeIf(i -> i.cognome.equals(testo));
                         break;
                     case 3:
-
+                        Paziente paziente = new Paziente();
+                        paziente.inserisciPaziente();
+                        elencoPazienti.add(paziente);
                         break;
 
                     case 4:
-
+                        System.out.println("Inserisci il cognome del paziente da eliminare..: ");
+                        testo = tastiera.nextLine();
+                        elencoPazienti.removeIf(i -> i.cognome.equals(testo));
                         break;
                     case 5:
                         for (Medico i : elencoMedici) {
                             System.out.println(i.nome + " " + i.cognome + " Numero pazienti "+ i.pazientiInCura);
+                        }
+                        break;
+                    case 6:
+                        for (Paziente i : elencoPazienti) {
+                            System.out.println(i.nome + " " + i.cognome + " Cartella clinica : "+ i.cartellaClinica);
                         }
                         break;
                     case 0:
