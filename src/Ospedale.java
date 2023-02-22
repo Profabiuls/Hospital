@@ -59,6 +59,7 @@ public class Ospedale {
                     4 Per rimuovere un paziente 
                     5 Per visualizzare l'elenco dei medici
                     6 Per visualizzare l'elenco dei pazienti
+                    7 Assegna un paziente ad un medico
                     0  per  uscire
                     """);
             try {
@@ -90,13 +91,17 @@ public class Ospedale {
                         break;
                     case 5:
                         for (Medico i : elencoMedici) {
-                            System.out.println(i.nome + " " + i.cognome + " Numero pazienti "+ i.pazientiInCura);
+                            System.out.println(i.nome + " " + i.cognome + " Numero pazienti "+ i.getPazientiInCura());
                         }
                         break;
                     case 6:
                         for (Paziente i : elencoPazienti) {
                             System.out.println(i.nome + " " + i.cognome + " Cartella clinica : "+ i.cartellaClinica);
                         }
+                        break;
+                    case 7:
+                       //da definire bene la logica
+                        // Medico.listaPazientiInCura.add();
                         break;
                     case 0:
 

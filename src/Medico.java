@@ -1,10 +1,11 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Medico extends Persona {
     Scanner tastiera = new Scanner(System.in);
-    String specializzazione;
-    int pazientiInCura;
-
+    private String specializzazione;
+    static int pazientiInCura = 0;
+    static LinkedList<Paziente> listaPazientiInCura = new LinkedList<>();
     public String getSpecializzazione() {
         return specializzazione;
     }
@@ -17,9 +18,9 @@ public class Medico extends Persona {
         return pazientiInCura;
     }
 
-    public void setPazientiInCura(int pazientiInCura) {
+/*    public void setPazientiInCura(int pazientiInCura) {
         this.pazientiInCura = pazientiInCura;
-    }
+    }*/
 
     String setMedico;
 
