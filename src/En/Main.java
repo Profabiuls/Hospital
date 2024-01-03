@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner tastiera = new Scanner(System.in);
-        LinkedList<Ospedale> elencoOspedali = new LinkedList<Ospedale>();
+        Scanner keyboard = new Scanner(System.in);
+        LinkedList<Hospital> hospitalsList = new LinkedList<>();
         System.out.println("""
                  __   __  _______  _______  _______  ___   _______  _______  ___    \s
                 |  | |  ||       ||       ||       ||   | |       ||   _   ||   |   \s
@@ -17,75 +17,71 @@ public class Main {
                 |__| |__||_______||_______||___|    |___|   |___|  |__| |__||_______|
                 """
         );
-        int scelta;
+        int choice;
 
         while (true) {
             System.out.println(""" 
-                    Ciao segui il menu' per entrare nelle diverse sezioni... 
-                    1 Per inserire un ospedale
-                    2 Per rimuovere un ospedale
-                    3 Per visualizzare l' elenco
-                    4 Per scegliere un'ospedale
-                    0  per  uscire
+                    Hello, follow the menu to access different sections... 
+                    1 To add a hospital
+                    2 To remove a hospital
+                    3 To view the list
+                    4 To choose a hospital
+                    0 To exit
                     """);
             try {
-                scelta = Integer.parseInt(tastiera.nextLine());
+                choice = Integer.parseInt(keyboard.nextLine());
 
-
-                switch (scelta) {
+                switch (choice) {
                     case 1:
-                        String testo;
-                        System.out.println("Inserisci il nome dell ospedale : ");
-                        testo = tastiera.nextLine();
-                        Ospedale ospedale = new Ospedale(testo);
-                        elencoOspedali.add(ospedale);
+                        String text;
+                        System.out.println("Enter the name of the hospital: ");
+                        text = keyboard.nextLine();
+                        Hospital hospital = new Hospital(text);
+                        hospitalsList.add(hospital);
                         break;
                     case 2:
                         do {
                             System.out.println("""
-                                    1 Per rimuovere l'ultimo
-                                    2 Per rimuovere il primo
-                                    0 Per tornare al menu' precedente
+                                    1 To remove the last
+                                    2 To remove the first
+                                    0 To return to the previous menu
                                     """);
-                            scelta = Integer.parseInt(tastiera.nextLine());
-                            if (scelta == 1) {
-                                elencoOspedali.removeLast();
+                            choice = Integer.parseInt(keyboard.nextLine());
+                            if (choice == 1) {
+                                hospitalsList.removeLast();
                             }
-                            if (scelta == 2) {
-                                elencoOspedali.removeFirst();
+                            if (choice == 2) {
+                                hospitalsList.removeFirst();
                             }
-                        } while (scelta != 0);
-
+                        } while (choice != 0);
+                        break;
                     case 3:
-                        System.out.println("Elenco ospedali creati: \n");
-                        for (Ospedale i : elencoOspedali) {
-                            System.out.println(i.getNome() + " Numero dipendenti : " + i.numeroDipendenti);
+                        System.out.println("List of created hospitals: \n");
+                        for (Hospital i : hospitalsList) {
+                            System.out.println(i.getName() + " Number of employees: " + i.getEmployeeCount());
                         }
                         break;
-
                     case 4:
-                        String sceltaOsp = "";
-                        System.out.println("Scegli un ospedale ed inserisci il nome per entrare nel menu':..");
-                        sceltaOsp = tastiera.nextLine();
-                        for (Ospedale i : elencoOspedali) {
-                            if (i.nome.equals(sceltaOsp)) {
+                        String hospitalChoice = "";
+                        System.out.println("Choose a hospital and enter the name to enter the menu:..");
+                        hospitalChoice = keyboard.nextLine();
+                        for (Hospital i : hospitalsList) {
+                            if (i.name.equals(hospitalChoice)) {
                                 i.menu();
                             } else {
-                                System.out.println("Il nome inserito non corrisponde a nessun ospedale riprova.. ");
+                                System.out.println("The entered name does not match any hospital, try again.. ");
                             }
                         }
                         break;
-
                     case 0:
                         System.exit(0);
                         break;
                     default:
-                        // istruzioni da eseguire se l'espressione non corrisponde a nessuno dei casi precedenti
+                        // instructions to be executed if the expression does not match any of the previous cases
                 }
 
             } catch (Exception ex) {
-                System.out.println(ex.getMessage() + "\nNon hai inserito un numero valido, \n" +
-                        "oppure hai inserito una lettera, ritenta!..");
+                System.out.println(ex.getMessage() + "\nYou did not enter a valid number, \nor you entered a letter, try again!..");
             }
         }
     }
