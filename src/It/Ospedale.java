@@ -1,3 +1,5 @@
+package It;
+
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -101,7 +103,7 @@ public class Ospedale {
                         break;
                     case 7:
                        //da definire bene la logica
-                        // Medico.listaPazientiInCura.add();
+                        // It.Medico.listaPazientiInCura.add();
                         break;
                     case 0:
 

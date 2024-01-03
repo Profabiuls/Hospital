@@ -1,3 +1,5 @@
+package It;
+
 public class Persona {
     String nome;
     String cognome;

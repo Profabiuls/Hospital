@@ -1,3 +1,5 @@
+package It;
+
 import java.util.Scanner;
 
 public class Paziente extends Persona {
