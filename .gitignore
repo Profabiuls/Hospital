@@ -6,3 +6,5 @@
 *.iml
 # Exclude out/production files
 out/
+# Exclude git ignore
+.gitignore
