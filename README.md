@@ -27,7 +27,6 @@ We are open to contributions and improvements. Feel free to open issues or pull 
 
 ## License
 This project is distributed under the [MIT License](LICENSE.txt). Refer to the `LICENSE.txt` file for more details.
------------------------------------------------------------------------------------------------------------------------------------------
 
 ---
 ---
